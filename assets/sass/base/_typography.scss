@@ -1,0 +1,107 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+@font-face {
+    font-family: 'Gilmer';
+    src: url('../fonts/Gilmer-Regular.woff2') format('woff2'),
+        url('../fonts/Gilmer-Regular.woff') format('woff'),
+        url('../fonts/Gilmer-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Gilmer';
+    src: url('../fonts/Gilmer-Bold.woff2') format('woff2'),
+        url('../fonts/Gilmer-Bold.woff') format('woff'),
+        url('../fonts/Gilmer-Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Gilmer';
+    src: url('../fonts/Gilmer-Heavy.woff2') format('woff2'),
+        url('../fonts/Gilmer-Heavy.woff') format('woff'),
+        url('../fonts/Gilmer-Heavy.ttf') format('truetype');
+    font-weight: 800;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Gilmer';
+    src: url('../fonts/Gilmer-Medium.woff2') format('woff2'),
+        url('../fonts/Gilmer-Medium.woff') format('woff'),
+        url('../fonts/Gilmer-Medium.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Eras Bold ITC';
+    src: url('../fonts/ErasITC-Bold.woff2') format('woff2'),
+        url('../fonts/ErasITC-Bold.woff') format('woff'),
+        url('../fonts/ErasITC-Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'National 2';
+    src: url('../fonts/National2-Bold.woff2') format('woff2'),
+        url('../fonts/National2-Bold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'National 2';
+    src: url('../fonts/National2-Medium.woff2') format('woff2'),
+        url('../fonts/National2-Medium.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'National 2';
+    src: url('../fonts/National2-Regular.woff2') format('woff2'),
+        url('../fonts/National2-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+
+
+h1,.h1,h2,.h2,h3,.h3,h4,.h4,h5,.h5,h6,.h6 {
+    font-family: var(--heading-font);
+    line-height: 1.1;
+    color: var(--heading-color);
+}
+
+
+.h1, h1 {
+    font-size: 72px;
+    @include screen-992 {
+        font-size: 42px;
+    }
+}
+.h2, h2 {
+    font-size: 40px;
+    @include screen-992 {
+        font-size: 32px;
+    }
+}
+.h3, h3 {
+    font-size: 32px;
+    @include screen-992 {
+        font-size: 28px;
+    }
+}
+
+.fw-normal {
+    font-weight: 400 !important;
+}

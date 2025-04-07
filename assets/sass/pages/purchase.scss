@@ -1,0 +1,503 @@
+.g-40,
+.gx-40 {
+    --bs-gutter-x: 40px;
+}
+
+.purchase_page_sec {
+    @include displayFlex(flex, start, start, row);
+    position: relative;
+    overflow: hidden;
+    min-height: 100vh;
+
+    @include screen-992 {
+        flex-wrap: wrap;
+
+        &>* {
+            width: 100%;
+        }
+    }
+
+    &>* {
+        flex: 0 0 auto;
+    }
+}
+
+.purchase_form_area {
+    position: fixed;
+    width: calc(100% - 451px);
+    top: 0;
+    left: 0;
+    bottom: 0;
+    overflow: auto;
+
+    &::-webkit-scrollbar {
+        width: 8px;
+    }
+
+    &::-webkit-scrollbar-track {
+        background: #fff;
+    }
+
+    & #container {
+        max-width: 808px;
+        width: 100%;
+        margin: 0 auto;
+    }
+
+    @include large-screen {
+        width: calc(100% - 370px);
+    }
+
+    @include screen-992 {
+        width: 100%;
+        position: relative;
+    }
+}
+
+.purchase_sidebar_area {
+    position: fixed;
+    width: 451px;
+    background: #e4f0ff;
+    min-height: 100vh;
+    padding: 49px 31px 49px 52px;
+    top: 0;
+    right: 0;
+    bottom: 0;
+
+    & .logo {
+        margin-bottom: 174px;
+    }
+
+    @include large-screen {
+        width: 370px;
+        padding: 49px 25px 49px 30px;
+    }
+
+    @include screen-992 {
+        position: relative;
+        width: 100%;
+        margin-top: 65px;
+        min-height: auto;
+    }
+
+    @include portrait-phone {
+        padding: 40px 25px 40px 25px;
+    }
+
+    &::-webkit-scrollbar-track {
+        background: #e4f0ff;
+    }
+
+    &::-webkit-scrollbar {
+        width: 8px;
+    }
+}
+
+#nda-multi-step-form {
+    max-width: 624px;
+    margin: 0 auto;
+    padding-bottom: 60px;
+
+    @include screen-768 {
+        padding-bottom: 40px;
+        margin-top: -35px;
+    }
+
+    @include screen-460 {
+        margin-top: -45px;
+    }
+}
+
+.step-3 h3 {
+    @include screen-460 {
+        margin-bottom: 12px !important;
+    }
+}
+
+/* Step form  */
+
+.step-container {
+    position: relative;
+    text-align: center;
+    transform: translateY(-43%);
+    margin-bottom: 133px;
+
+    @include screen-992 {
+        margin-bottom: 80px;
+        justify-content: center;
+        padding-top: 30px;
+    }
+
+    @include screen-768 {
+        flex-wrap: wrap;
+        padding-top: 90px;
+        position: relative;
+        row-gap: 30px;
+        margin-bottom: 0px;
+    }
+
+    @include large-screen {
+        &>div:nth-child(1) {
+            max-width: 165px;
+        }
+    }
+
+    @include screen-992 {
+        &>div:nth-child(1) {
+            max-width: 210px;
+        }
+    }
+
+    & .logo {
+        & img {
+            max-height: 50px;
+        }
+
+        @include large-screen {
+            max-width: 90%;
+            align-items: center;
+        }
+    }
+
+    @include screen-768 {
+        &>div:nth-child(1) {
+            width: 100%;
+            max-width: 100%;
+            margin: 0 !important;
+            @include displayFlex(flex, center, center, row);
+        }
+    }
+
+    & .step_navWrap {
+        @include displayFlex(flex, start, center, row);
+        flex-wrap: nowrap;
+    }
+}
+
+.step-circle {
+    width: auto;
+    height: auto;
+    border-radius: 52px;
+    background-color: transparent;
+    color: rgb(39, 58, 83);
+    font-family: "Open Sans", serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    padding: 8px 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    gap: 4px;
+
+    & span {
+        font-family: inherit;
+        font-size: inherit;
+    }
+
+    @include screen-1320 {
+        padding: 12px 20px;
+    }
+
+    @include large-screen {
+        font-size: 17px;
+    }
+
+    @include screen-992 {
+        font-size: 18px;
+    }
+
+    @include portrait-phone {
+        font-size: 15px;
+        line-height: 18px;
+    }
+
+    @include screen-460 {
+        font-size: 12px;
+        line-height: 16px;
+        padding: 14px 18px;
+    }
+
+    @include screen-360 {
+        padding: 9px 12px;
+    }
+}
+
+.step-circle.active {
+    background-color: #E9EFFF;
+}
+
+#nda-multi-step-form {
+    overflow-x: hidden;
+
+    & input,
+    & select,
+    & textarea {
+        border: 2px solid #E4E4E4;
+        border-radius: 10px;
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 19.2px;
+        padding: 19px 20px;
+        color: var(--heading-color);
+        box-shadow: unset !important;
+        outline: unset;
+    }
+
+    & input:placeholder {
+        color: var(--heading-color);
+    }
+
+    & textarea {
+        height: 240px;
+    }
+
+    & select {
+        background-image:
+            linear-gradient(45deg, transparent 50%, gray 50%),
+            linear-gradient(135deg, gray 50%, transparent 50%),
+            linear-gradient(to right, #ccc, #ccc);
+        background-position:
+            calc(100% - 20px) calc(1em + 2px),
+            calc(100% - 15px) calc(1em + 2px),
+            calc(100% - 2.5em) 0.5em;
+        background-size:
+            5px 5px,
+            5px 5px,
+            1px 1.5em;
+        background-repeat: no-repeat;
+    }
+
+    button[type="submit"] {
+        font-size: 20px;
+        font-weight: 600;
+        line-height: 24px;
+        border-radius: 20px;
+        background: #A6E6D7;
+        width: 253px;
+        height: 61px;
+        @include displayFlex(flex, center, center, column);
+        border: unset;
+        outline: unset;
+        color: var(--heading-color);
+
+        &:hover {
+            background: var(--secondary-color)
+        }
+    }
+
+    .prev-step {
+        position: relative;
+
+        &::before {
+            content: "➜";
+            display: inline-block;
+            line-height: 1;
+            transform: rotate(180deg);
+            margin: 5px 6px 0 0;
+            transition: 0.1s;
+        }
+    }
+}
+
+.step-circle {
+    cursor: default;
+}
+
+
+.step>h3 {
+    font-family: Gilmer;
+    font-size: 36px;
+    font-weight: 800;
+    line-height: 43px;
+    text-align: left;
+    color: #575757;
+    margin-bottom: 44px;
+
+    @include portrait-phone {
+        font-size: 32px;
+        line-height: 38px;
+        margin-bottom: 38px;
+    }
+}
+
+.step {
+    & button[type="button"] {
+        margin-top: 16px;
+        font-size: 20px;
+        font-weight: 700;
+        line-height: 1;
+        color: var(--white-color);
+        width: 150px;
+        height: 55px;
+        @include displayFlex(flex, center, center, row);
+        background: var(--secondary-color);
+        border: 0;
+        outline: unset !important;
+        box-shadow: unset !important;
+        margin-left: auto;
+        border-radius: 10px;
+
+        &:hover {
+            background: var(--secondary-color);
+            opacity: 0.9;
+        }
+
+        @include screen-992 {
+            width: 130px;
+        }
+    }
+
+    & button.prev-step {
+        padding: 0 !important;
+        background: transparent !important;
+        color: var(--body-color);
+        width: unset !important;
+
+        &:hover {
+            color: var(--dark-color);
+        }
+    }
+}
+
+.step-1 {
+    & button[type="button"] {
+        margin-top: 58px;
+    }
+}
+
+// Sidebar 
+.purchase_sidebar_cnt {
+    position: relative;
+    margin-top: 140px;
+
+    &::after {
+        position: absolute;
+        content: "";
+        top: 50%;
+        left: -74px;
+        width: 50px;
+        height: 50px;
+        background: #e4f0ff;
+        transform: rotate(45deg);
+        z-index: -1;
+
+        @include large-screen {
+            left: -45px;
+        }
+    }
+
+    @include screen-992 {
+        margin-top: 0;
+    }
+
+    @include screen-768 {
+        max-width: 260px;
+        margin: 0 auto;
+    }
+
+    & h2 {
+        font-size: 60px;
+        font-family: 'National 2';
+        font-weight: 700;
+        line-height: 72px;
+        margin-bottom: 20px;
+        color: #2081E2;
+
+        @include large-screen {
+            font-size: 50px;
+            line-height: 62px;
+        }
+    }
+
+    & h4 {
+        font-size: 22px;
+        line-height: 30px;
+        font-weight: 700;
+        color: #575757;
+        margin-bottom: 20px;
+        font-family: 'National 2';
+        color: var(--dark-color);
+    }
+
+    & ul {
+        @include screen-992 {
+            max-width: 340px;
+            width: 100%;
+            text-align: left;
+            margin: 0 auto;
+        }
+
+        & li {
+            font-size: 20px;
+            font-weight: 400;
+            line-height: 30px;
+            color: #7a7e92;
+            font-family: 'National 2';
+            background: url(../images/check.svg) no-repeat left 5px;
+            background-size: 20px;
+            padding-left: 25px;
+
+
+            @include large-screen {
+                font-size: 18px;
+                line-height: 28px;
+            }
+
+            &:not(:last-child) {
+                margin-bottom: 10px;
+            }
+        }
+    }
+}
+
+.paymentMtdDisp {
+    @include screen-768 {
+        max-width: 100%;
+        position: relative !important;
+        width: 100%;
+        height: 100% !important;
+        min-height: 870px;
+        top: 0 !important;
+    }
+}
+
+.activeStep3 {
+    max-width: 100%;
+    width: 100%;
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.activeStep3 .step-container {
+    margin-bottom: 30px;
+
+    @include portrait-phone {
+        margin-bottom: 0;
+    }
+}
+
+.activeStep3>.container {
+    max-width: 100% !important;
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.activeStep3 #nda-multi-step-form {
+    max-width: 100% !important;
+    padding-bottom: 0;
+}
+
+.activeStep3 .buttonWrap {
+    display: none !important;
+    margin: 0 !important;
+}
+
+.activeStep3+.purchase_sidebar_area {
+    display: none !important;
+}
+
+.formFooter {
+    display: none !important;
+}

@@ -1,0 +1,123 @@
+// Footer 
+footer.footer_sec {
+    position: relative;
+    padding: 30px 0 20px;
+    background: var(--primary-color);
+
+    & .container-xl {
+        max-width: 1260px;
+        & .mb-55{
+            margin-bottom: 40px;
+        }
+    }
+}
+
+.footer_logo {
+    & img {
+        height: 42px;
+    }
+}
+
+.ftop_cantact {
+    @include displayFlex(flex, end, end, column);
+    gap: 2px;
+
+    a {
+        font-size: 17px;
+        font-weight: 800;
+        line-height: 22px;
+        color: var(--white-color);
+
+        @include portrait-phone {
+            font-size: 15px;
+            line-height: 20px;
+        }
+
+        &:hover {
+            color: rgba(255, 255, 255, 0.80);
+        }
+    }
+
+    @include portrait-phone {
+        margin-top: -3px;
+    }
+}
+
+.footer_copyRight_cnt {
+    position: relative;
+
+    & p {
+        font-size: 17px;
+        font-weight: 800;
+        line-height: 22px;
+        color: var(--white-color);
+        margin-bottom: 0;
+
+        @include portrait-phone {
+            font-size: 15px;
+            line-height: 20px;
+        }
+    }
+
+    & ul {
+        position: relative;
+        @include displayFlex(inline-flex, start, start, row);
+        gap: 16px;
+
+        & li {
+            position: relative;
+
+            &:not(:last-child) {
+                &::after {
+                    position: absolute;
+                    content: "|";
+                    right: -10px;
+                    top: 2.5px;
+                    color: var(--white-color);
+                    font-weight: 700;
+                    font-size: 17px;
+                }
+            }
+
+            & a {
+                font-size: 17px;
+                font-weight: 800;
+                line-height: 22px;
+                text-decoration-line: underline;
+                text-decoration-style: solid;
+                color: var(--white-color);
+                transition: 0.3s;
+
+                &:hover {
+                    text-decoration: none;
+                    color: rgba(255, 255, 255, 0.80);
+                }
+
+                @include screen-992 {
+                    font-size: 15px;
+                    line-height: 19px;
+                }
+                @media(max-width: 374px){
+                    font-size: 12.9px;
+                }
+            }
+
+        }
+    }
+}
+
+.footer_social {
+    @include displayFlex(inline-flex, end, center, row);
+    gap: 36px;
+
+    @include screen-992 {
+        gap: 24px;
+    }
+
+    @include portrait-phone {
+        max-width: 360px;
+    }
+    & img{
+        height: 36px;
+    }
+}
