@@ -22,17 +22,20 @@
             position: relative;
             padding: 59px 0 100px;
         }
-        .contactUs_sec .container-xl{
+
+        .contactUs_sec .container-xl {
             max-width: 1260px;
         }
-        .contactUs_cnt h2{
+
+        .contactUs_cnt h2 {
             font: 60px;
             line-height: 1.2;
             font-weight: 700;
             text-decoration: underline;
             margin-bottom: 42px;
         }
-        .contactUs_cnt p{
+
+        .contactUs_cnt p {
             font-size: 18px;
             line-height: 28px;
             font-weight: 400;
@@ -46,12 +49,13 @@
             box-shadow: 0px 0px 4px 2px rgba(0, 0, 0, 0.31);
         }
 
-        .contactUs_form h2{
+        .contactUs_form h2 {
             font-size: 40px;
             line-height: 1.2;
             font-weight: 600;
             margin-bottom: 32px;
         }
+
         .contactUs_form .mb-3 {
             position: relative;
         }
@@ -108,7 +112,8 @@
             background-size: 5px 5px, 5px 5px, 1px 1.5em;
             background-repeat: no-repeat;
         }
-        .contactUs_form button[type="submit"]{
+
+        .contactUs_form button[type="submit"] {
             font-family: Gilmer;
             font-size: 15px;
             font-weight: 800;
@@ -132,6 +137,226 @@
             -ms-flex-direction: row;
             flex-direction: row;
         }
+
+        /*-----------------------------------------
+        /  01. Mobile Menu popup
+        /-----------------------------------------*/
+        .popup_mbMenu_sec {
+            position: absolute;
+            left: 0;
+            top: 0;
+            right: 0;
+        }
+
+        .popup_mbMenu_overlay {
+            position: fixed;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: rgba(22, 21, 21, .6);
+            z-index: 99;
+            opacity: 0;
+            visibility: hidden;
+            backdrop-filter: blur(16px);
+            cursor: url(./assets/images/close.png), auto;
+            -webkit-transition: all .4s ease-in .8s;
+            -o-transition: all .4s ease-in .8s;
+            transition: all .4s ease-in .8s;
+        }
+
+        .popup_mbMenu_bg02,
+        .popup_mbMenu_bg {
+            background: linear-gradient(135deg, rgba(52, 52, 52, .88), rgba(61, 61, 61, .53));
+            backdrop-filter: blur(16px);
+            width: 290px;
+            height: 100%;
+            left: -100%;
+            z-index: 9999999991;
+            padding: 60px 25px 60px 25px;
+            position: fixed;
+            top: 0;
+            opacity: 0;
+            visibility: hidden;
+            -webkit-overflow-scrolling: touch;
+            -webkit-transition: all 0.5s cubic-bezier(0.9, 0.03, 0, 0.96) 0.5s;
+            -o-transition: all 0.5s cubic-bezier(0.9, 0.03, 0, 0.96) 0.5s;
+            transition: all 0.5s cubic-bezier(0.9, 0.03, 0, 0.96) 0.5s;
+            overflow-y: auto;
+        }
+
+        .popup_mbMenu_bg02 {
+            left: unset;
+            right: -100%;
+        }
+
+        .popup_mbMenu_bg::-webkit-scrollbar {
+            width: 6px;
+        }
+
+        .popup_mbMenu_bg::-webkit-scrollbar-track {
+            -webkit-box-shadow: inset 0 0 3px rgba(0, 0, 0, 0.3);
+            box-shadow: inset 0 0 3px rgba(0, 0, 0, 0.3);
+        }
+
+        .popup_mbMenu_bg::-webkit-scrollbar-thumb {
+            background-color: darkgrey;
+            border-radius: 10px;
+        }
+
+
+        .popup_mbMenu_sec.active .popup_mbMenu_overlay {
+            visibility: visible;
+            -webkit-transition: all .6s ease-out 0s;
+            -o-transition: all .6s ease-out 0s;
+            transition: all .6s ease-out 0s;
+            left: 0;
+            opacity: 1;
+        }
+
+        .popup_mbMenu_sec.active .popup_mbMenu_bg {
+            opacity: 1;
+            left: 0;
+            visibility: visible;
+            -webkit-transition: all 0.3s cubic-bezier(0.9, 0.03, 0, 0.96) 0.4s;
+            -o-transition: all 0.3s cubic-bezier(0.9, 0.03, 0, 0.96) 0.4s;
+            transition: all 0.3s cubic-bezier(0.9, 0.03, 0, 0.96) 0.4s;
+        }
+
+        .popup_mbMenu_header {
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-box-pack: justify;
+            -ms-flex-pack: justify;
+            justify-content: space-between;
+            -webkit-box-align: center;
+            -ms-flex-align: center;
+            align-items: center;
+            margin-bottom: 80px;
+        }
+
+        .popup_mbMenu_closer {
+            position: relative;
+            display: inline-block;
+            width: 30px;
+            height: 30px;
+            background-color: transparent;
+            color: #fff;
+            border: 2px;
+            border-style: dashed;
+            border-radius: 50%;
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-box-pack: center;
+            -ms-flex-pack: center;
+            justify-content: center;
+            -webkit-box-align: center;
+            -ms-flex-align: center;
+            align-items: center;
+            font-size: 16px;
+        }
+
+        .popup_mbMenu_logo img {
+            max-width: 140px;
+        }
+
+        .mobile_navMenu {
+            margin-bottom: 48px;
+        }
+
+        .mobile_navMenu li {
+            border-bottom: 1px solid #FFF;
+        }
+
+        .mobile_navMenu li a {
+            color: #FFF;
+            padding: 15px 0;
+            display: block;
+        }
+
+        .mobile_navMenu li.menu-item-has-children>a:after {
+            content: "\f078";
+            float: right;
+            font-family: "FontAwesome";
+            top: 0;
+            right: 0px;
+            left: auto;
+            font-size: 12px;
+            -ms-transform: rotate(0) !important;
+            transform: rotate(0) !important;
+            -moz-transform: rotate(0) !important;
+            -webkit-transform: rotate(0) !important;
+            -webkit-transform: rotate(0) !important;
+            -webkit-transition: 0.3s;
+            -o-transition: 0.3s;
+            transition: 0.3s;
+        }
+
+        .mobile_navMenu li .sub-menu {
+            min-width: 100%;
+            border: none;
+            padding: 0;
+            z-index: 5;
+            position: relative;
+            width: 100%;
+            opacity: 1;
+            margin: 0;
+            background: transparent;
+            -webkit-box-shadow: none;
+            box-shadow: none;
+            border-radius: 0;
+            visibility: visible;
+            pointer-events: inherit;
+            top: 0;
+            left: 0;
+            display: none;
+            -webkit-transform: none;
+            -ms-transform: none;
+            transform: none;
+            -webkit-transition: none;
+            -o-transition: none;
+            transition: none;
+        }
+
+        .mobile_navMenu li .sub-menu li {
+            border: 0 !important;
+        }
+        .mobile_navMenu li .sub-menu li:last-child{
+            margin-bottom: 7px;
+        }
+        .mobile_navMenu li .sub-menu li a{
+            font-size: 14px;
+            padding: 8px 15px;
+        }
+        .mobile_navMenu li .sub-menu li a:hover{
+            background: #FFF;
+            color: #171717;
+        }
+
+
+        .social_nav ul {
+            display: flex;
+            justify-content: start;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .social_nav li a {
+            color: #171717;
+            font-size: 16px;
+            padding: 10px;
+            background: #FFF;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .social_nav li a:hover{
+            opacity: .7;
+        }
     </style>
 </head>
 
@@ -154,6 +379,7 @@
                                 <li><a href="#pricing">Pricing</a></li>
                             </ul>
                         </nav>
+                        <a class="navMenu_btn"><i class="fas fa-bars"></i></a>
                     </div>
                 </div>
             </div>
@@ -218,13 +444,13 @@
                                     </div>
                                     <div class="mb-3 gx-40">
                                         <label for="hear-about" class="form-label">How Did You Hear About Us? *</label>
-                                        <select id="hear-about" data-pristine-required="" name="inquiry-source" class="form-control w-100"> 
-                                            <option value="option" disabled="" selected="">Please Select</option> 
-                                            <option value="internet-google">Internet/Google</option> 
-                                            <option value="referral">Referral</option> 
-                                            <option value="radio-ad">Radio Ad</option> 
-                                            <option value="tv-ad">TV Ad</option> 
-                                            <option value="facebook">Facebook</option> 
+                                        <select id="hear-about" data-pristine-required="" name="inquiry-source" class="form-control w-100">
+                                            <option value="option" disabled="" selected="">Please Select</option>
+                                            <option value="internet-google">Internet/Google</option>
+                                            <option value="referral">Referral</option>
+                                            <option value="radio-ad">Radio Ad</option>
+                                            <option value="tv-ad">TV Ad</option>
+                                            <option value="facebook">Facebook</option>
                                             <option value="other">Other</option>
                                         </select>
                                     </div>
@@ -281,6 +507,55 @@
         </div>
     </footer>
 
+    <section class="popup_mbMenu_sec active">
+        <div class="popup_mbMenu_overlay"></div>
+        <div class="popup_mbMenu_bg">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="popup_mbMenu_cnt">
+                            <div class="popup_mbMenu_header">
+                                <div class="popup_mbMenu_logo">
+                                    <a href="//need-add.com">
+                                        <img src="assets/images/logo.svg" alt="need-add">
+                                    </a>
+                                </div>
+                                <a href="javascript:void(0);" class="popup_mbMenu_closer"><i class="fas fa-times"></i></a>
+                            </div>
+                            <nav class="mobile_mainMenu">
+                                <ul id="menu-main-menu-1" class="mobile_navMenu">
+                                    <li><a href="#">About us</a></li>
+                                    <li class="menu-item-has-children"><a href="#">Service</a>
+                                        <ul class="sub-menu">
+                                            <li><a href="#">Service One</a></li>
+                                            <li><a href="#">Service two</a></li>
+                                            <li><a href="#">Service Three</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="#">Solutions</a></li>
+                                    <li class="menu-item-has-children"><a href="#">Case Studies</a>
+                                        <ul class="sub-menu">
+                                            <li><a href="#">Case Studies One</a></li>
+                                            <li><a href="#">Case Studies two</a></li>
+                                            <li><a href="#">Case Studies Three</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="#">Contact Us</a></li>
+                                </ul>
+                            </nav>
+                            <div class="social_nav">
+                                <ul>
+                                    <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+                                    <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <script src="assets/js/jquery.min.js"></script>
     <script src="assets/js/popper.min.js"></script>
     <script src="assets/js/bootstrap.bundle.min.js"></script>
@@ -289,7 +564,9 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/12.1.6/js/intlTelInput.min.js"></script>
     <script src="assets/js/main.js"></script>
     <script>
-        $(function () {
+        (function ($) {
+            'use strict';
+
             var code = "+19876543210";
             $('#mobile').val(code);
             $('#mobile').intlTelInput({
@@ -312,7 +589,46 @@
                 document.getElementById("code").innerHTML = code;
                 document.getElementById("mobile-number").innerHTML = phoneNumber;
             });
-        });
+
+
+            var navMenu_btn = $('.navMenu_btn');
+
+            navMenu_btn.on('click', function (e) {
+                e.preventDefault();
+                $('.popup_mbMenu_sec').toggleClass('active');
+            });
+
+            $('.popup_mbMenu_overlay').on('click', function () {
+                $('.popup_mbMenu_sec').removeClass('active');
+            });
+
+            $('.popup_mbMenu_closer').on('click', function () {
+                $('.popup_mbMenu_sec').removeClass('active');
+            });
+
+            $(".mobile_mainMenu li.menu-item-has-children a").click(function () {
+                var link = $(this);
+                var closest_ul = link.closest("ul");
+                var parallel_active_links = closest_ul.find(".active")
+                var closest_li = link.closest("li");
+                var link_status = closest_li.hasClass("active");
+                var count = 0;
+
+                closest_ul.find("ul").slideUp(function () {
+                    if (++count == closest_ul.find("ul").length) {
+                        parallel_active_links.removeClass("active");
+                        parallel_active_links.children("ul").removeClass("show-dropdown");
+                    }
+                });
+
+                if (!link_status) {
+                    closest_li.children("ul").slideDown().addClass("show-dropdown");
+                    closest_li.parent().parent("li.active").find('ul').find("li.active").removeClass("active");
+                    link.parent().addClass("active");
+                }
+            });
+
+        })(jQuery);
     </script>
 </body>
 
