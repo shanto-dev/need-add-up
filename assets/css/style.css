@@ -790,17 +790,17 @@ footer.footer_sec {
       padding: 16px 0 22px; } }
   .marketing_cnt_sec h1 {
     font-family: 'Gilmer';
-    font-size: 63px;
+    font-size: 40px;
     font-weight: 600;
-    line-height: 71.3px;
+    line-height: 54px;
     color: var(--white-color);
     margin-bottom: 22px;
     margin-right: 0;
     max-width: 1150px; }
     @media (max-width: 1199.98px) {
       .marketing_cnt_sec h1 {
-        font-size: 54px;
-        line-height: 64.3px; } }
+        font-size: 38px;
+        line-height: 52px; } }
     @media (max-width: 1199.98px) {
       .marketing_cnt_sec h1 {
         font-size: 34px;
@@ -1980,5 +1980,69 @@ footer.footer_sec {
     .nad_nav ul li:last-child a{
         padding-left: 12px;
         padding-right: 12px;
+    }
+}
+/* New Modification  */
+.pricing_google_add .pricing_table_body ul.show_height{
+    height: 460px;
+    overflow: hidden;
+}
+.pricing_google_add .pricing_table_body ul:not('show_height'){
+    height: auto;
+}
+.pricing_seo .pricing_table_body ul.show_height{
+    height: 460px;
+    overflow: hidden;
+}
+.pricing_seo .pricing_table_body ul:not('show_height'){
+    height: auto;
+}
+.showMore {
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 18px;
+    color: var(--body-color);
+    margin-top: 21px;
+    text-decoration: underline;
+    display: inline-block;
+}
+.callUsBtns{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 15px;
+}
+.callUsBtns li a{
+    font-size: 20px;
+    line-height: 1;
+    font-weight: 800;
+    padding: 20px 47px;
+    border-radius: 80px;
+    display: inline-block;
+    background: var(--secondary-color);
+    color: var(--dark-color);
+}
+@media(max-width: 767px){
+    .callUsBtns li a{
+        font-size: 18px;
+        padding: 15px 30px;
+    }
+}
+.marketing_rcnt h1{
+    margin: 0;
+}
+.marketing_rcnt p{
+    margin-bottom: 32px;
+}
+.marketing_lcnt p a{
+    color: #FFF;
+    text-decoration: underline;
+}
+.marketing_lcnt p a:hover{
+    opacity: .8;
+}
+@media(max-width: 991px){
+    .marketing_lcnt {
+        margin-bottom: 60px;
     }
 }

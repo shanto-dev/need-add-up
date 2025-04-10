@@ -310,4 +310,17 @@
         });
     });
 
+    // pricing show more 
+    $(".showMore").click(function () {
+        var $ul = $(this).closest("div").prev("ul"); // Find the closest previous <ul>
+    
+        if ($ul.hasClass("show_height")) {
+            $(this).text("Show Less");
+        } else {
+            $(this).text("Show More");
+        }
+    
+        $ul.toggleClass("show_height"); // Toggle the class on the closest <ul>
+    });
+
 })(jQuery);

@@ -41,12 +41,17 @@
             font-weight: 400;
             margin-bottom: 18px;
         }
+        .contactUs_cnt p a:hover{
+            opacity: .7;
+            color: var(--primary-color);
+        }
 
         .contactUs_form {
             padding: 20px 30px;
-            border-radius: 30px;
-            -webkit-box-shadow: 0px 0px 4px 2px rgba(0, 0, 0, 0.31);
-            box-shadow: 0px 0px 4px 2px rgba(0, 0, 0, 0.31);
+            border-radius: 24px;    
+            --tw-shadow: 0 10px 15px -3px rgba(0,0,0,.1),0 4px 6px -4px rgba(0,0,0,.1);
+            --tw-shadow-colored: 0 10px 15px -3px var(--tw-shadow-color),0 4px 6px -4px var(--tw-shadow-color);
+            background: #F8F8F8;
         }
 
         .contactUs_form h2 {
@@ -86,6 +91,7 @@
             -webkit-box-shadow: unset !important;
             box-shadow: unset !important;
             outline: unset;
+            width: 100%;
         }
 
         .contactUs_form textarea {
@@ -274,6 +280,9 @@
             color: #FFF;
             padding: 15px 0;
             display: block;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
         }
 
         .mobile_navMenu li.menu-item-has-children>a:after {
@@ -323,39 +332,39 @@
         .mobile_navMenu li .sub-menu li {
             border: 0 !important;
         }
-        .mobile_navMenu li .sub-menu li:last-child{
+
+        .mobile_navMenu li .sub-menu li:last-child {
             margin-bottom: 7px;
         }
-        .mobile_navMenu li .sub-menu li a{
+
+        .mobile_navMenu li .sub-menu li a {
             font-size: 14px;
             padding: 8px 15px;
         }
-        .mobile_navMenu li .sub-menu li a:hover{
+
+        .mobile_navMenu li .sub-menu li a:hover {
             background: #FFF;
             color: #171717;
         }
 
-
-        .social_nav ul {
-            display: flex;
-            justify-content: start;
-            align-items: center;
-            gap: 10px;
+        .navMenu_btn {
+            position: relative;
+            text-align: right;
+            float: right;
         }
-
-        .social_nav li a {
-            color: #171717;
-            font-size: 16px;
-            padding: 10px;
-            background: #FFF;
-            width: 40px;
-            height: 40px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-        .social_nav li a:hover{
+        .navMenu_btn:hover{
+            color: var(--primary-color);
             opacity: .7;
+        }
+        .popup_mbMenu_closer:hover{
+            color: var(--primary-color);
+            border-color: var(--primary-color);
+        }
+        @media(max-width: 767px){
+            .contactUs_sec > .container-xl > .row{
+                flex-direction: column-reverse;
+                gap: 60px;
+            }
         }
     </style>
 </head>
@@ -366,20 +375,23 @@
     <header>
         <div class="nad_header_sec">
             <div class="container cus-sm-container">
-                <div class="row justify-content-between">
+                <div class="row justify-content-between align-items-center">
                     <div class="col-5 col-sm-4 text-center text-sm-start">
                         <a href="index.html" class="hd_logo">
                             <img src="assets/images/logo.svg" alt="NeedAdd">
                         </a>
                     </div>
                     <div class="col-7 col-sm-8 ps-2 ps-sm-4">
-                        <nav class="nad_nav text-end">
+                        <nav class="nad_nav text-end d-none d-sm-block">
                             <ul>
                                 <li><a href="case-studies.html">Case Studies</a></li>
                                 <li><a href="#pricing">Pricing</a></li>
+                                <li><a href="reporting.html">Reporting</a></li>
+                                <li><a href="faq.html">FAQ</a></li>
+                                <li><a href="contact-us.html">Contact</a></li>
                             </ul>
                         </nav>
-                        <a class="navMenu_btn"><i class="fas fa-bars"></i></a>
+                        <a class="navMenu_btn d-sm-none"><i class="fas fa-bars"></i></a>
                     </div>
                 </div>
             </div>
@@ -402,7 +414,7 @@
                 <div class="col-md-6">
                     <div class="contactUs_form">
                         <h2 class="">Get Started</h2>
-                        <form action="" method="post">
+                        <form action="contact-us.php" method="post">
                             <div class="row">
                                 <div class="col-sm-6">
                                     <div class="mb-3 gx-40">
@@ -507,7 +519,7 @@
         </div>
     </footer>
 
-    <section class="popup_mbMenu_sec active">
+    <section class="popup_mbMenu_sec">
         <div class="popup_mbMenu_overlay"></div>
         <div class="popup_mbMenu_bg">
             <div class="container">
@@ -515,40 +527,17 @@
                     <div class="col-12">
                         <div class="popup_mbMenu_cnt">
                             <div class="popup_mbMenu_header">
-                                <div class="popup_mbMenu_logo">
-                                    <a href="//need-add.com">
-                                        <img src="assets/images/logo.svg" alt="need-add">
-                                    </a>
-                                </div>
                                 <a href="javascript:void(0);" class="popup_mbMenu_closer"><i class="fas fa-times"></i></a>
                             </div>
                             <nav class="mobile_mainMenu">
                                 <ul id="menu-main-menu-1" class="mobile_navMenu">
-                                    <li><a href="#">About us</a></li>
-                                    <li class="menu-item-has-children"><a href="#">Service</a>
-                                        <ul class="sub-menu">
-                                            <li><a href="#">Service One</a></li>
-                                            <li><a href="#">Service two</a></li>
-                                            <li><a href="#">Service Three</a></li>
-                                        </ul>
-                                    </li>
-                                    <li><a href="#">Solutions</a></li>
-                                    <li class="menu-item-has-children"><a href="#">Case Studies</a>
-                                        <ul class="sub-menu">
-                                            <li><a href="#">Case Studies One</a></li>
-                                            <li><a href="#">Case Studies two</a></li>
-                                            <li><a href="#">Case Studies Three</a></li>
-                                        </ul>
-                                    </li>
-                                    <li><a href="#">Contact Us</a></li>
+                                    <li><a href="case-studies.html">Case Studies <i class="fas fa-arrow-right-long"></i></a></li>
+                                    <li><a href="#pricing">Pricing <i class="fas fa-arrow-right-long"></i></a></li>
+                                    <li><a href="#">Reporting <i class="fas fa-arrow-right-long"></i></a></li>
+                                    <li><a href="#">FAQ <i class="fas fa-arrow-right-long"></i></a></li>
+                                    <li><a href="contact-us.html">Contact <i class="fas fa-arrow-right-long"></i></a></li>
                                 </ul>
                             </nav>
-                            <div class="social_nav">
-                                <ul>
-                                    <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-                                    <li><a href="#"><i class="fab fa-twitter"></i></a></li>
-                                </ul>
-                            </div>
                         </div>
                     </div>
                 </div>
