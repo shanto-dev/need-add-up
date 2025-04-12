@@ -323,4 +323,58 @@
         $ul.toggleClass("show_height"); // Toggle the class on the closest <ul>
     });
 
+    // backtotop
+    function backtotop() {
+        $(window).scroll(function () {
+           if ($(this).scrollTop() > 50) {
+              $('#backtotop').addClass('activate');
+           } else {
+              $('#backtotop').removeClass('activate');
+           }
+        });
+        $('#backtotop').on('click', function () {
+           $("html, body").animate({ scrollTop: 0 }, 600);
+           return false;
+        });
+     }
+    backtotop();
+    
+    // Mibile Popup Menu 
+    var navMenu_btn = $('.navMenu_btn');
+
+            navMenu_btn.on('click', function (e) {
+                e.preventDefault();
+                $('.popup_mbMenu_sec').toggleClass('active');
+            });
+
+            $('.popup_mbMenu_overlay').on('click', function () {
+                $('.popup_mbMenu_sec').removeClass('active');
+            });
+
+            $('.popup_mbMenu_closer').on('click', function () {
+                $('.popup_mbMenu_sec').removeClass('active');
+            });
+
+            $(".mobile_mainMenu li.menu-item-has-children a").click(function () {
+                var link = $(this);
+                var closest_ul = link.closest("ul");
+                var parallel_active_links = closest_ul.find(".active")
+                var closest_li = link.closest("li");
+                var link_status = closest_li.hasClass("active");
+                var count = 0;
+
+                closest_ul.find("ul").slideUp(function () {
+                    if (++count == closest_ul.find("ul").length) {
+                        parallel_active_links.removeClass("active");
+                        parallel_active_links.children("ul").removeClass("show-dropdown");
+                    }
+                });
+
+                if (!link_status) {
+                    closest_li.children("ul").slideDown().addClass("show-dropdown");
+                    closest_li.parent().parent("li.active").find('ul').find("li.active").removeClass("active");
+                    link.parent().addClass("active");
+                }
+            });
+
 })(jQuery);

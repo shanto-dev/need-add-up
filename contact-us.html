@@ -16,357 +16,6 @@
     <link rel="stylesheet" href="assets/css/swiper-bundle.min.css">
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/12.1.6/css/intlTelInput.css">
-
-    <style>
-        .contactUs_sec {
-            position: relative;
-            padding: 59px 0 100px;
-        }
-
-        .contactUs_sec .container-xl {
-            max-width: 1260px;
-        }
-
-        .contactUs_cnt h2 {
-            font: 60px;
-            line-height: 1.2;
-            font-weight: 700;
-            text-decoration: underline;
-            margin-bottom: 42px;
-        }
-
-        .contactUs_cnt p {
-            font-size: 18px;
-            line-height: 28px;
-            font-weight: 400;
-            margin-bottom: 18px;
-        }
-        .contactUs_cnt p a:hover{
-            opacity: .7;
-            color: var(--primary-color);
-        }
-
-        .contactUs_form {
-            padding: 20px 30px;
-            border-radius: 24px;    
-            --tw-shadow: 0 10px 15px -3px rgba(0,0,0,.1),0 4px 6px -4px rgba(0,0,0,.1);
-            --tw-shadow-colored: 0 10px 15px -3px var(--tw-shadow-color),0 4px 6px -4px var(--tw-shadow-color);
-            background: #F8F8F8;
-        }
-
-        .contactUs_form h2 {
-            font-size: 40px;
-            line-height: 1.2;
-            font-weight: 600;
-            margin-bottom: 32px;
-        }
-
-        .contactUs_form .mb-3 {
-            position: relative;
-        }
-
-        .contactUs_form label {
-            font-size: 12px;
-            margin: 0;
-            padding: 0 4px;
-            position: absolute;
-            background: #fff;
-            display: inline-block;
-            left: 10px;
-            top: -6px;
-            line-height: 1;
-            z-index: 2;
-        }
-
-        .contactUs_form input,
-        .contactUs_form select,
-        .contactUs_form textarea {
-            border: 2px solid #E4E4E4;
-            border-radius: 10px;
-            font-size: 16px;
-            font-weight: 400;
-            line-height: 19.2px;
-            padding: 13px 11px 12px;
-            color: var(--heading-color);
-            -webkit-box-shadow: unset !important;
-            box-shadow: unset !important;
-            outline: unset;
-            width: 100%;
-        }
-
-        .contactUs_form textarea {
-            width: 100%;
-            height: 177px;
-            resize: none;
-        }
-
-        .contactUs_form .selected-dial-code {
-            font-size: 16px;
-            font-weight: 400;
-            line-height: 19.2px;
-        }
-
-        .contactUs_form .selected-flag {
-            background-color: rgba(0, 0, 0, 0.02) !important;
-        }
-
-        .contactUs_form select {
-            background-image: -webkit-linear-gradient(45deg, transparent 50%, gray 50%), -webkit-linear-gradient(315deg, gray 50%, transparent 50%), -webkit-linear-gradient(left, #ccc, #ccc);
-            background-image: -o-linear-gradient(45deg, transparent 50%, gray 50%), -o-linear-gradient(315deg, gray 50%, transparent 50%), -o-linear-gradient(left, #ccc, #ccc);
-            background-image: linear-gradient(45deg, transparent 50%, gray 50%), linear-gradient(135deg, gray 50%, transparent 50%), linear-gradient(to right, #ccc, #ccc);
-            background-position: calc(100% - 20px) calc(1em + 2px), calc(100% - 15px) calc(1em + 2px), calc(100% - 2.5em) 0.5em;
-            background-size: 5px 5px, 5px 5px, 1px 1.5em;
-            background-repeat: no-repeat;
-        }
-
-        .contactUs_form button[type="submit"] {
-            font-family: Gilmer;
-            font-size: 15px;
-            font-weight: 800;
-            line-height: 24px;
-            text-transform: capitalize;
-            padding: 5px 9px 8px;
-            width: 120px;
-            border-radius: 10px;
-            border: 1.5px solid #E4E4E4;
-            display: -webkit-box;
-            display: -ms-flexbox;
-            display: flex;
-            -webkit-box-pack: center;
-            -ms-flex-pack: center;
-            justify-content: center;
-            -webkit-box-align: center;
-            -ms-flex-align: center;
-            align-items: center;
-            -webkit-box-orient: horizontal;
-            -webkit-box-direction: normal;
-            -ms-flex-direction: row;
-            flex-direction: row;
-        }
-
-        /*-----------------------------------------
-        /  01. Mobile Menu popup
-        /-----------------------------------------*/
-        .popup_mbMenu_sec {
-            position: absolute;
-            left: 0;
-            top: 0;
-            right: 0;
-        }
-
-        .popup_mbMenu_overlay {
-            position: fixed;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: rgba(22, 21, 21, .6);
-            z-index: 99;
-            opacity: 0;
-            visibility: hidden;
-            backdrop-filter: blur(16px);
-            cursor: url(./assets/images/close.png), auto;
-            -webkit-transition: all .4s ease-in .8s;
-            -o-transition: all .4s ease-in .8s;
-            transition: all .4s ease-in .8s;
-        }
-
-        .popup_mbMenu_bg02,
-        .popup_mbMenu_bg {
-            background: linear-gradient(135deg, rgba(52, 52, 52, .88), rgba(61, 61, 61, .53));
-            backdrop-filter: blur(16px);
-            width: 290px;
-            height: 100%;
-            left: -100%;
-            z-index: 9999999991;
-            padding: 60px 25px 60px 25px;
-            position: fixed;
-            top: 0;
-            opacity: 0;
-            visibility: hidden;
-            -webkit-overflow-scrolling: touch;
-            -webkit-transition: all 0.5s cubic-bezier(0.9, 0.03, 0, 0.96) 0.5s;
-            -o-transition: all 0.5s cubic-bezier(0.9, 0.03, 0, 0.96) 0.5s;
-            transition: all 0.5s cubic-bezier(0.9, 0.03, 0, 0.96) 0.5s;
-            overflow-y: auto;
-        }
-
-        .popup_mbMenu_bg02 {
-            left: unset;
-            right: -100%;
-        }
-
-        .popup_mbMenu_bg::-webkit-scrollbar {
-            width: 6px;
-        }
-
-        .popup_mbMenu_bg::-webkit-scrollbar-track {
-            -webkit-box-shadow: inset 0 0 3px rgba(0, 0, 0, 0.3);
-            box-shadow: inset 0 0 3px rgba(0, 0, 0, 0.3);
-        }
-
-        .popup_mbMenu_bg::-webkit-scrollbar-thumb {
-            background-color: darkgrey;
-            border-radius: 10px;
-        }
-
-
-        .popup_mbMenu_sec.active .popup_mbMenu_overlay {
-            visibility: visible;
-            -webkit-transition: all .6s ease-out 0s;
-            -o-transition: all .6s ease-out 0s;
-            transition: all .6s ease-out 0s;
-            left: 0;
-            opacity: 1;
-        }
-
-        .popup_mbMenu_sec.active .popup_mbMenu_bg {
-            opacity: 1;
-            left: 0;
-            visibility: visible;
-            -webkit-transition: all 0.3s cubic-bezier(0.9, 0.03, 0, 0.96) 0.4s;
-            -o-transition: all 0.3s cubic-bezier(0.9, 0.03, 0, 0.96) 0.4s;
-            transition: all 0.3s cubic-bezier(0.9, 0.03, 0, 0.96) 0.4s;
-        }
-
-        .popup_mbMenu_header {
-            display: -webkit-box;
-            display: -ms-flexbox;
-            display: flex;
-            -webkit-box-pack: justify;
-            -ms-flex-pack: justify;
-            justify-content: space-between;
-            -webkit-box-align: center;
-            -ms-flex-align: center;
-            align-items: center;
-            margin-bottom: 80px;
-        }
-
-        .popup_mbMenu_closer {
-            position: relative;
-            display: inline-block;
-            width: 30px;
-            height: 30px;
-            background-color: transparent;
-            color: #fff;
-            border: 2px;
-            border-style: dashed;
-            border-radius: 50%;
-            display: -webkit-box;
-            display: -ms-flexbox;
-            display: flex;
-            -webkit-box-pack: center;
-            -ms-flex-pack: center;
-            justify-content: center;
-            -webkit-box-align: center;
-            -ms-flex-align: center;
-            align-items: center;
-            font-size: 16px;
-        }
-
-        .popup_mbMenu_logo img {
-            max-width: 140px;
-        }
-
-        .mobile_navMenu {
-            margin-bottom: 48px;
-        }
-
-        .mobile_navMenu li {
-            border-bottom: 1px solid #FFF;
-        }
-
-        .mobile_navMenu li a {
-            color: #FFF;
-            padding: 15px 0;
-            display: block;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .mobile_navMenu li.menu-item-has-children>a:after {
-            content: "\f078";
-            float: right;
-            font-family: "FontAwesome";
-            top: 0;
-            right: 0px;
-            left: auto;
-            font-size: 12px;
-            -ms-transform: rotate(0) !important;
-            transform: rotate(0) !important;
-            -moz-transform: rotate(0) !important;
-            -webkit-transform: rotate(0) !important;
-            -webkit-transform: rotate(0) !important;
-            -webkit-transition: 0.3s;
-            -o-transition: 0.3s;
-            transition: 0.3s;
-        }
-
-        .mobile_navMenu li .sub-menu {
-            min-width: 100%;
-            border: none;
-            padding: 0;
-            z-index: 5;
-            position: relative;
-            width: 100%;
-            opacity: 1;
-            margin: 0;
-            background: transparent;
-            -webkit-box-shadow: none;
-            box-shadow: none;
-            border-radius: 0;
-            visibility: visible;
-            pointer-events: inherit;
-            top: 0;
-            left: 0;
-            display: none;
-            -webkit-transform: none;
-            -ms-transform: none;
-            transform: none;
-            -webkit-transition: none;
-            -o-transition: none;
-            transition: none;
-        }
-
-        .mobile_navMenu li .sub-menu li {
-            border: 0 !important;
-        }
-
-        .mobile_navMenu li .sub-menu li:last-child {
-            margin-bottom: 7px;
-        }
-
-        .mobile_navMenu li .sub-menu li a {
-            font-size: 14px;
-            padding: 8px 15px;
-        }
-
-        .mobile_navMenu li .sub-menu li a:hover {
-            background: #FFF;
-            color: #171717;
-        }
-
-        .navMenu_btn {
-            position: relative;
-            text-align: right;
-            float: right;
-        }
-        .navMenu_btn:hover{
-            color: var(--primary-color);
-            opacity: .7;
-        }
-        .popup_mbMenu_closer:hover{
-            color: var(--primary-color);
-            border-color: var(--primary-color);
-        }
-        @media(max-width: 767px){
-            .contactUs_sec > .container-xl > .row{
-                flex-direction: column-reverse;
-                gap: 60px;
-            }
-        }
-    </style>
 </head>
 
 <body>
@@ -374,15 +23,15 @@
     <!--Start header Section  -->
     <header>
         <div class="nad_header_sec">
-            <div class="container cus-sm-container">
+            <div class="container-xl">
                 <div class="row justify-content-between align-items-center">
                     <div class="col-5 col-sm-4 text-center text-sm-start">
                         <a href="index.html" class="hd_logo">
                             <img src="assets/images/logo.svg" alt="NeedAdd">
                         </a>
                     </div>
-                    <div class="col-7 col-sm-8 ps-2 ps-sm-4">
-                        <nav class="nad_nav text-end d-none d-sm-block">
+                    <div class="col-7 col-sm-8 ps-2 ps-sm-4 text-end">
+                        <nav class="nad_nav text-end d-none d-md-block">
                             <ul>
                                 <li><a href="case-studies.html">Case Studies</a></li>
                                 <li><a href="#pricing">Pricing</a></li>
@@ -391,7 +40,7 @@
                                 <li><a href="contact-us.html">Contact</a></li>
                             </ul>
                         </nav>
-                        <a class="navMenu_btn d-sm-none"><i class="fas fa-bars"></i></a>
+                        <a class="navMenu_btn d-md-none"><i class="fas fa-bars"></i></a>
                     </div>
                 </div>
             </div>
@@ -402,8 +51,8 @@
     <!-- Start Banner Heading  -->
     <section class="contactUs_sec">
         <div class="container-xl">
-            <div class="row align-items-center gx-5">
-                <div class="col-md-6">
+            <div class="row align-items-center gx-xl-5">
+                <div class="col-xxl-6 col-lg-5">
                     <div class="contactUs_cnt">
                         <h2>Contact Us</h2>
                         <p>We simplify lead generation so you can focus on growing your business.</p>
@@ -411,7 +60,7 @@
                         <p>You are under no obligation to make a purchase and we keep your personal information private and confidential. <a href="#" class="text-underline">View our privacy policy.</a></p>
                     </div>
                 </div>
-                <div class="col-md-6">
+                <div class="col-xxl-6 col-lg-7">
                     <div class="contactUs_form">
                         <h2 class="">Get Started</h2>
                         <form action="contact-us.php" method="post">
@@ -544,6 +193,7 @@
             </div>
         </div>
     </section>
+    <a href="javascript:void(0);" id="backtotop" class=""><i class="fas fa-arrow-right-long"></i></a>
 
     <script src="assets/js/jquery.min.js"></script>
     <script src="assets/js/popper.min.js"></script>
@@ -578,45 +228,6 @@
                 document.getElementById("code").innerHTML = code;
                 document.getElementById("mobile-number").innerHTML = phoneNumber;
             });
-
-
-            var navMenu_btn = $('.navMenu_btn');
-
-            navMenu_btn.on('click', function (e) {
-                e.preventDefault();
-                $('.popup_mbMenu_sec').toggleClass('active');
-            });
-
-            $('.popup_mbMenu_overlay').on('click', function () {
-                $('.popup_mbMenu_sec').removeClass('active');
-            });
-
-            $('.popup_mbMenu_closer').on('click', function () {
-                $('.popup_mbMenu_sec').removeClass('active');
-            });
-
-            $(".mobile_mainMenu li.menu-item-has-children a").click(function () {
-                var link = $(this);
-                var closest_ul = link.closest("ul");
-                var parallel_active_links = closest_ul.find(".active")
-                var closest_li = link.closest("li");
-                var link_status = closest_li.hasClass("active");
-                var count = 0;
-
-                closest_ul.find("ul").slideUp(function () {
-                    if (++count == closest_ul.find("ul").length) {
-                        parallel_active_links.removeClass("active");
-                        parallel_active_links.children("ul").removeClass("show-dropdown");
-                    }
-                });
-
-                if (!link_status) {
-                    closest_li.children("ul").slideDown().addClass("show-dropdown");
-                    closest_li.parent().parent("li.active").find('ul').find("li.active").removeClass("active");
-                    link.parent().addClass("active");
-                }
-            });
-
         })(jQuery);
     </script>
 </body>
