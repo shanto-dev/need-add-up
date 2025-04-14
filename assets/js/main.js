@@ -322,22 +322,6 @@
     
         $ul.toggleClass("show_height"); // Toggle the class on the closest <ul>
     });
-
-    // backtotop
-    function backtotop() {
-        $(window).scroll(function () {
-           if ($(this).scrollTop() > 50) {
-              $('#backtotop').addClass('activate');
-           } else {
-              $('#backtotop').removeClass('activate');
-           }
-        });
-        $('#backtotop').on('click', function () {
-           $("html, body").animate({ scrollTop: 0 }, 600);
-           return false;
-        });
-     }
-    backtotop();
     
     // Mibile Popup Menu 
     var navMenu_btn = $('.navMenu_btn');
