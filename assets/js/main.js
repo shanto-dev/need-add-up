@@ -335,7 +335,7 @@
                 $('.popup_mbMenu_sec').removeClass('active');
             });
 
-            $('.popup_mbMenu_closer').on('click', function () {
+            $('.popup_mbMenu_closer, .popup_mbMenu_sec ul li a').on('click', function () {
                 $('.popup_mbMenu_sec').removeClass('active');
             });
 
